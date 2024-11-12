@@ -15,17 +15,20 @@ Com menu inicial e menu principal sendo liberado depois
 
 def Inicio():
     consumo = []
+    wt_gerados = 0
 
-    perg_inicio = input("\nBem Vindo a Plataforma SolarCash\n\n1 - Adicionar consumo\n2 - Calcular Media do consumo\n3 - Encerrar Programa\nO que deseja?: ")
+    perg_inicio = input("\nBem Vindo a Plataforma SolarCash\n\n1 - Adicionar Wolts gerados\n2 - Adicionar consumo\n3 - Calcular Media do consumo\n4 - Encerrar Programa\nO que deseja?: ")
 
-    while perg_inicio.isnumeric() == False and (perg_inicio != "1" or perg_inicio != "2"):
-        perg_inicio = input("\nOpção inválida\n\n1 - Adicionar consumo\n2 - Calcular Media do consumo\n3 - Encerrar Programa\nO que deseja?: ")
+    while perg_inicio.isnumeric() == False and (perg_inicio != "1" or perg_inicio != "2" or perg_inicio != "3" or perg_inicio != "4"):
+        perg_inicio = input("\nOpção inválida\n\n1 - Adicionar Wolts gerados\n2 - Adicionar consumo\n3 - Calcular Media do consumo\n4 - Encerrar Programa\nO que deseja?: ")
 
     if perg_inicio == "1":
-        Add_Consumo(consumo)
+        Geracao(wt_gerados)
     elif perg_inicio == "2":
-        Media(consumo)
+        Add_Consumo(consumo)
     elif perg_inicio == "3":
+        Media(consumo)
+    elif perg_inicio == "4":
         Encerrar()    
 
 
@@ -39,7 +42,14 @@ def Menu_Principal(consumo):
     if perg_menu == "1":
         Add_Consumo(consumo)
     elif perg_menu == "2":
-        Media(consumo)        
+        Media(consumo)
+    elif perg_menu == "3":
+        Encerrar()        
+
+
+def Geracao(wt_gerados):
+    perg_wt_gerados = input("")
+    pass
 
 
 def Add_Consumo(consumo):
