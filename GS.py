@@ -4,42 +4,40 @@ def Inicio():
 
     while True:
         try:
-            perg_inicio = int(input("\nBem Vindo a Plataforma SolarCash\n\n1 - Adicionar Wolts gerados\n2 - Adicionar consumo\n3 - Calcular Media do consumo\n4 - Encerrar Programa\nO que deseja?: "))
-            if perg_inicio in {1, 2, 3, 4}:
+            perg_inicio = int(input("\nBem Vindo a Plataforma SolarCash\n\n1 - Adicionar Watts gerados\n2 - Encerrar Programa\nO que deseja?: "))
+            if perg_inicio in {1, 2}:
                 break
-            print("\nOpção inválida. Escolha uma opção entre 1 e 4.")
+            print("\nOpção inválida. Escolha uma opção entre 1 ou 2.")
         except ValueError:
             print("\nEntrada inválida. Digite um número.")
 
     if perg_inicio == 1:
-        Geracao(wt_gerados)
+        Geracao(wt_gerados, consumo)
     elif perg_inicio == 2:
-        Add_Consumo(consumo)
-    elif perg_inicio == 3:
-        Media(consumo)
-    elif perg_inicio == 4:
         Encerrar()    
 
 
-def Menu_Principal(consumo):
+def Menu_Principal(wt_gerados, consumo):
     while True:
         try:
-            perg_menu = int(input("\nMenu principal\n\n1 - Adicionar consumo\n2 - Calcular Media do consumo\n3 - Encerrar Programa\nO que deseja?: "))
-            if perg_menu in {1, 2, 3}:
+            perg_menu = int(input("\nMenu principal\n\n1 - Adicionar Watts gerados\n2 - Adicionar consumo\n3 - Calcular Media do consumo\n4 - Encerrar Programa\nO que deseja?: "))
+            if perg_menu in {1, 2, 3, 4}:
                 break
             print("\nOpção inválida")
         except ValueError:
             print("\nEntrada inválida, Digite um número.")
 
     if perg_menu == 1:
-        Add_Consumo(consumo)
+        Add_Consumo(wt_gerados, consumo)
     elif perg_menu == 2:
-        Media(consumo)
+        Geracao(wt_gerados, consumo)
     elif perg_menu == 3:
+        Media(consumo)
+    elif perg_menu == 4:
         Encerrar()        
 
 
-def Geracao(wt_gerados):
+def Geracao(wt_gerados, consumo):
     while True:
         try:
             perg_wt_gerados = int(input("\nInsira a quantidade de Watts gerados: "))
@@ -49,8 +47,12 @@ def Geracao(wt_gerados):
         except ValueError:
             print("\nEntrada inválida, Digite um número.")
 
+    wt_gerados += perg_wt_gerados
 
-def Add_Consumo(consumo):
+    return wt_gerados, Menu_Principal(wt_gerados, consumo)    
+
+
+def Add_Consumo(wt_gerados, consumo):
     periodo = 0
    
     while True:
@@ -76,8 +78,11 @@ def Add_Consumo(consumo):
         
         consumo.append(consumo_no_periodo)
 
+
+    # !!!!!!!!!!!!!!!!!!!!!    Preciso fazer a parada de não poder colocar mais consumo do que foi gerado
+
     print(consumo)
-    return consumo, Menu_Principal(consumo)
+    return consumo, Menu_Principal(wt_gerados, consumo)
 
 
 def Media(consumo):
@@ -96,7 +101,7 @@ def Media(consumo):
 
     print(f"\n{media_consumo}")
 
-    return consumo, Menu_Principal(consumo)    
+    return consumo, Menu_Principal(wt_gerados, consumo)    
 
 
 def Encerrar():
