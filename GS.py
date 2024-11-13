@@ -1,71 +1,72 @@
-"""
-
-Aplicativo vai focar no algoritmo de conversão de energia para o saldo
-
-Por enquanto no código cru, o usuário vai inserir as informações
-
-Vai ser bem parecido a cp3
-Com menu inicial e menu principal sendo liberado depois
-
-- Entrada do usuário
-- Menu
-- 
-
-"""
-
 def Inicio():
     consumo = []
     wt_gerados = 0
 
-    perg_inicio = input("\nBem Vindo a Plataforma SolarCash\n\n1 - Adicionar Wolts gerados\n2 - Adicionar consumo\n3 - Calcular Media do consumo\n4 - Encerrar Programa\nO que deseja?: ")
+    while True:
+        try:
+            perg_inicio = int(input("\nBem Vindo a Plataforma SolarCash\n\n1 - Adicionar Wolts gerados\n2 - Adicionar consumo\n3 - Calcular Media do consumo\n4 - Encerrar Programa\nO que deseja?: "))
+            if perg_inicio in {1, 2, 3, 4}:
+                break
+            print("\nOpção inválida. Escolha uma opção entre 1 e 4.")
+        except ValueError:
+            print("\nEntrada inválida. Digite um número.")
 
-    while perg_inicio.isnumeric() == False and (perg_inicio != "1" or perg_inicio != "2" or perg_inicio != "3" or perg_inicio != "4"):
-        perg_inicio = input("\nOpção inválida\n\n1 - Adicionar Wolts gerados\n2 - Adicionar consumo\n3 - Calcular Media do consumo\n4 - Encerrar Programa\nO que deseja?: ")
-
-    if perg_inicio == "1":
+    if perg_inicio == 1:
         Geracao(wt_gerados)
-    elif perg_inicio == "2":
+    elif perg_inicio == 2:
         Add_Consumo(consumo)
-    elif perg_inicio == "3":
+    elif perg_inicio == 3:
         Media(consumo)
-    elif perg_inicio == "4":
+    elif perg_inicio == 4:
         Encerrar()    
 
 
 def Menu_Principal(consumo):
+    while True:
+        try:
+            perg_menu = int(input("\nMenu principal\n\n1 - Adicionar consumo\n2 - Calcular Media do consumo\n3 - Encerrar Programa\nO que deseja?: "))
+            if perg_menu in {1, 2, 3}:
+                break
+            print("\nOpção inválida")
+        except ValueError:
+            print("\nEntrada inválida, Digite um número.")
 
-    perg_menu = input("\nMenu principal\n\n1 - Adicionar consumo\n2 - Calcular Media do consumo\n3 - Encerrar Programa\nO que deseja?: ")
-
-    while perg_menu.isnumeric() == False and (perg_menu != "1" or perg_menu != "2"):
-        perg_menu = input("\nOpção inválida\n\n1 - Adicionar consumo\n2 - Calcular Media do consumo\n3 - Encerrar Programa\nO que deseja?: ")
-
-    if perg_menu == "1":
+    if perg_menu == 1:
         Add_Consumo(consumo)
-    elif perg_menu == "2":
+    elif perg_menu == 2:
         Media(consumo)
-    elif perg_menu == "3":
+    elif perg_menu == 3:
         Encerrar()        
 
 
 def Geracao(wt_gerados):
-    perg_wt_gerados = input("")
-    pass
+    while True:
+        try:
+            perg_wt_gerados = int(input("\nInsira a quantidade de Watts gerados: "))
+            if perg_wt_gerados > 0:
+                break
+            print("\nOpção inválida")
+        except ValueError:
+            print("\nEntrada inválida, Digite um número.")
 
 
 def Add_Consumo(consumo):
     periodo = 0
-    
+   
+    while True:
+        try:
+            perg_periodo_consumo = int(input("\nInsira o periodo de consumo\n1 - Dia\n2 - Semana\n3 - Mês\nQual seria?: "))
+            if perg_periodo_consumo in {1, 2, 3}:
+                break
+            print("\nOpção inválida.")
+        except ValueError:
+            print("\nEntrada inválida. Digite um número.")    
 
-    perg_periodo_consumo = input("\nInsira o periodo de consumo\n1 - Dia\n2 - Semana\n3 - Mês\nQual seria?: ")
-
-    while perg_periodo_consumo.isnumeric() == False and (perg_periodo_consumo != "1" or perg_periodo_consumo != "2" or perg_periodo_consumo != "3"):
-        perg_periodo_consumo = input("\nOpção inválida\nTente novamente\n1 - Dia\n2 - Semana\n3 - Mês\nQual seria?: ")
-
-    if perg_periodo_consumo == "1":
+    if perg_periodo_consumo == 1:
         periodo = 1
-    elif perg_periodo_consumo == "2":
+    elif perg_periodo_consumo == 2:
         periodo = 7
-    elif perg_periodo_consumo == "3":
+    elif perg_periodo_consumo == 3:
         periodo = 30
 
     for i in range(periodo):
@@ -80,7 +81,6 @@ def Add_Consumo(consumo):
 
 
 def Media(consumo):
-
     while not consumo:
         print("\nNão é possível executar esta função pois não há nenhum dado de consumo")
         Inicio()
