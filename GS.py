@@ -28,11 +28,11 @@ def Menu_Principal(wt_gerados, consumo):
             print("\nEntrada inválida, Digite um número.")
 
     if perg_menu == 1:
-        Add_Consumo(wt_gerados, consumo)
-    elif perg_menu == 2:
         Geracao(wt_gerados, consumo)
+    elif perg_menu == 2:
+        Add_Consumo(wt_gerados, consumo)
     elif perg_menu == 3:
-        Media(consumo)
+        Media(wt_gerados, consumo)
     elif perg_menu == 4:
         Encerrar()        
 
@@ -85,10 +85,10 @@ def Add_Consumo(wt_gerados, consumo):
     return consumo, Menu_Principal(wt_gerados, consumo)
 
 
-def Media(consumo):
+def Media(wt_gerados, consumo):
     while not consumo:
         print("\nNão é possível executar esta função pois não há nenhum dado de consumo")
-        Inicio()
+        Menu_Principal(wt_gerados, consumo)
         
     media = 0
 
