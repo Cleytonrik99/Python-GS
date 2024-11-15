@@ -54,7 +54,13 @@ def Geracao(wt_gerados, consumo):
 
 def Add_Consumo(wt_gerados, consumo):
     periodo = 0
+    verificar_consumo = 0
    
+    while wt_gerados == 0:
+        print("\nNão é possível usar esta função")
+        input("\nPressione enter para continuar")
+        Menu_Principal(wt_gerados, consumo)
+
     while True:
         try:
             perg_periodo_consumo = int(input("\nInsira o periodo de consumo\n1 - Dia\n2 - Semana\n3 - Mês\nQual seria?: "))
@@ -83,12 +89,20 @@ def Add_Consumo(wt_gerados, consumo):
             except ValueError:
                 print("\nEntrada inválida. Digite um número.")
 
-        consumo.append({"Dia": i, "consumo": consumo_no_periodo})
+        verificar_consumo += consumo_no_periodo
 
-    # !!!!!!!!!!!!!!!!!!!!!    Preciso fazer a parada de não poder colocar mais consumo do que foi gerado
+        if verificar_consumo <= wt_gerados:
+            consumo.append({"Dia": i, "consumo": consumo_no_periodo})
+        else: 
+            print("\nEntrada não aceita\nVocê tentou consumir mais do que gerou")
+            break    
 
     print(f"\nSeu consumo adicionado é: \n{consumo}")
+
     input("\nPressione enter para continuar")
+
+    wt_gerados -= verificar_consumo
+    
     return consumo, Menu_Principal(wt_gerados, consumo)
 
 
