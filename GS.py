@@ -40,7 +40,7 @@ def Menu_Principal(wt_gerados, consumo):
 def Geracao(wt_gerados, consumo):
     while True:
         try:
-            perg_wt_gerados = int(input("\nInsira a quantidade de Watts gerados: "))
+            perg_wt_gerados = int(input("\nInsira a quantidade de kWh gerados: "))
             if perg_wt_gerados > 0:
                 break
             print("\nOpção inválida")
@@ -102,7 +102,7 @@ def Add_Consumo(wt_gerados, consumo):
     input("\nPressione enter para continuar")
 
     wt_gerados -= verificar_consumo
-    
+
     return consumo, Menu_Principal(wt_gerados, consumo)
 
 
@@ -121,7 +121,7 @@ def Media(wt_gerados, consumo):
     media_consumo = media / tamanho
 
     print(f"\nAtualmente, este é seu consumo\n{consumo}")
-    print(f"\nA média do consumo é: {media_consumo}")            
+    print(f"\nA média do consumo é: {media_consumo}kWh")            
 
     input("\nPressione enter para continuar")
 
