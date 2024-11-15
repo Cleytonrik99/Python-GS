@@ -72,11 +72,18 @@ def Add_Consumo(wt_gerados, consumo):
         periodo = 30
 
     for i in range(periodo):
-        i+= 1
+        i += 1
 
-        consumo_no_periodo = int(input(f"Consumo no dia {i}: "))
-        
-        consumo.append(consumo_no_periodo)
+        while True:
+            try:
+                consumo_no_periodo = int(input(f"Consumo no dia {i}: "))
+                if consumo_no_periodo > 0:
+                    break
+                print("\nOpção inválida.")
+            except ValueError:
+                print("\nEntrada inválida. Digite um número.")
+
+        consumo.append({"Dia": i, "consumo": consumo_no_periodo})
 
 
     # !!!!!!!!!!!!!!!!!!!!!    Preciso fazer a parada de não poder colocar mais consumo do que foi gerado
@@ -92,14 +99,14 @@ def Media(wt_gerados, consumo):
         
     media = 0
 
-    for i in consumo:
-        media += i
+    for dias in consumo:
+        media += dias["consumo"]
 
     tamanho = len(consumo)
 
     media_consumo = media / tamanho
 
-    print(f"\n{media_consumo}")
+    print(f"\nA média do consumo é: {media_consumo}")            
 
     return consumo, Menu_Principal(wt_gerados, consumo)    
 
