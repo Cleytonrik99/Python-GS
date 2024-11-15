@@ -89,6 +89,7 @@ def Add_Consumo(wt_gerados, consumo):
     # !!!!!!!!!!!!!!!!!!!!!    Preciso fazer a parada de não poder colocar mais consumo do que foi gerado
 
     print(consumo)
+    input("Pressione enter para continuar")
     return consumo, Menu_Principal(wt_gerados, consumo)
 
 
@@ -106,7 +107,10 @@ def Media(wt_gerados, consumo):
 
     media_consumo = media / tamanho
 
+    print(f"\nAtualmente, este é seu consumo\n{consumo}")
     print(f"\nA média do consumo é: {media_consumo}")            
+
+    input("Pressione enter para continuar")
 
     return consumo, Menu_Principal(wt_gerados, consumo)    
 
