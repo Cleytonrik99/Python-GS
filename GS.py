@@ -85,11 +85,10 @@ def Add_Consumo(wt_gerados, consumo):
 
         consumo.append({"Dia": i, "consumo": consumo_no_periodo})
 
-
     # !!!!!!!!!!!!!!!!!!!!!    Preciso fazer a parada de não poder colocar mais consumo do que foi gerado
 
-    print(consumo)
-    input("Pressione enter para continuar")
+    print(f"\nSeu consumo adicionado é: \n{consumo}")
+    input("\nPressione enter para continuar")
     return consumo, Menu_Principal(wt_gerados, consumo)
 
 
@@ -110,7 +109,7 @@ def Media(wt_gerados, consumo):
     print(f"\nAtualmente, este é seu consumo\n{consumo}")
     print(f"\nA média do consumo é: {media_consumo}")            
 
-    input("Pressione enter para continuar")
+    input("\nPressione enter para continuar")
 
     return consumo, Menu_Principal(wt_gerados, consumo)    
 
