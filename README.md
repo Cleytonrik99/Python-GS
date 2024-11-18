@@ -5,6 +5,14 @@
 
 # Sun Cash
 
-O projeto consiste na criação de uma plataforma que atenderá usuários de energia solar.
-O usuário, gerando energia com o seu sistema, vai acabar por não usar toda a energia que criou.
-Neste momento que a plataforma entra em uso, possibilitando que o usuário "venda" sua energia não utilizada em troca de: Benefícios, desconto em compras e troca direta do saldo em um produto.
+O projeto **SolarCash** tem como objetivo oferecer uma plataforma inovadora para usuários de sistemas de energia solar. A proposta é atender aqueles que, ao gerarem energia em suas residências ou empresas, frequentemente acabam produzindo mais do que consomem. Essa energia excedente, que normalmente seria desperdiçada ou limitada em sua utilização, ganha uma nova utilidade com o SolarCash.
+
+A plataforma permite que os usuários registrem a energia gerada e acompanhem seu saldo de produção. Além disso, ela possibilita que o excedente de energia seja "vendido" virtualmente, transformando-o em um saldo digital chamado **SolarCoins**. Com esses créditos acumulados, o usuário pode usufruir de diversos benefícios, como:
+
+- **Troca por produtos**: Adquira itens e serviços, como assinaturas de plataformas de ensino, gift cards ou recompensas específicas.  
+- **Descontos em compras**: Utilize o saldo para reduzir o custo de compras futuras, promovendo ainda mais economia.  
+- **Conversão para valores monetários**: Troque o saldo de SolarCoins diretamente por dinheiro, oferecendo flexibilidade para o usuário.  
+
+A proposta do SolarCash não é apenas oferecer controle sobre o consumo e a geração de energia, mas também criar uma oportunidade de retorno financeiro e acesso a benefícios exclusivos. Com uma interface interativa e funcional, a plataforma promove o uso sustentável da energia renovável enquanto maximiza as vantagens para os usuários.
+
+**SolarCash** é mais do que um sistema de controle; é uma ferramenta para aproveitar ao máximo a energia gerada, transformando excedentes em reais benefícios para o usuário e contribuindo para uma economia mais verde e eficiente.
