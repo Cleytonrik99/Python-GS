@@ -5,7 +5,7 @@ def Inicio():
 
     while True:
         try:
-            perg_inicio = int(input("\nBem Vindo a Plataforma SolarCash\n\n1 - Adicionar Watts gerados\n2 - Encerrar Programa\nO que deseja?: "))
+            perg_inicio = int(input("\nBem Vindo a Plataforma SolarCash\n\n1 - Adicionar Watts gerados\n2 - Encerrar Programa\nO que deseja?\nR: "))
             if perg_inicio in {1, 2}:
                 break
             print("\nOpção inválida. Escolha uma opção entre 1 ou 2.")
@@ -23,7 +23,7 @@ def Inicio():
 def Menu_Principal(wt_gerados, consumo, Saldo):
     while True:
         try:
-            perg_menu = int(input("\nMenu principal\n\n1 - Adicionar Watts gerados\n2 - Adicionar consumo\n3 - Calcular Media do consumo\n4 - Converter kWh em saldo\n5 - Visualizar seus dados\n6 - Trocar SolarCoins por produtos\n7 - Encerrar Programa\nO que deseja?: "))
+            perg_menu = int(input("\nMenu principal\n\n1 - Adicionar Watts gerados\n2 - Adicionar consumo\n3 - Calcular Media do consumo\n4 - Converter kWh em saldo\n5 - Visualizar seus dados\n6 - Trocar SolarCoins por produtos\n7 - Encerrar Programa\nO que deseja?\nR: "))
             if perg_menu in {1, 2, 3, 4, 5, 6, 7}:
                 break
             else: print("\nOpção inválida")
@@ -75,7 +75,7 @@ def Add_Consumo(wt_gerados, consumo, Saldo):
 
     while True:
         try:
-            perg_periodo_consumo = int(input("\nInsira o periodo de consumo\n1 - Dia\n2 - Semana\n3 - Mês\nQual seria?: "))
+            perg_periodo_consumo = int(input("\nInsira o periodo de consumo\n1 - Dia\n2 - Semana\n3 - Mês\nQual seria?\nR: "))
             if perg_periodo_consumo in {1, 2, 3}:
                 break
             print("\nOpção inválida.")
@@ -133,7 +133,7 @@ def Media(wt_gerados, consumo, Saldo):
     media_consumo = media / tamanho
 
     print(f"\nAtualmente, este é seu consumo\n{consumo}")
-    print(f"\nA média do consumo é: {media_consumo}kWh")            
+    print(f"\nA média do consumo é: {media_consumo:.4f}kWh")            
 
     input("\nPressione enter para continuar")
 
@@ -142,6 +142,11 @@ def Media(wt_gerados, consumo, Saldo):
 
 def Conversao(wt_gerados, consumo, Saldo):
     taxa_de_conversao = 6.5
+
+    while not wt_gerados:
+        print("\nVocê não possui nenhum saldo de energia para ser convertido.")
+        input("\nPressione enter para continuar")
+        Menu_Principal(wt_gerados, consumo, Saldo)
 
     while True:
         try:
@@ -186,7 +191,7 @@ def Visualizar(wt_gerados, consumo, Saldo):
 def Compra(wt_gerados, consumo, Saldo):
     while True:
         try:
-            perg_compra = int(input("\nBem-vindo a nossa loja\n\n1 - 1 Mês de Alura\nPreço: 1250 SolarCoins\n\n2 - Gift Card Playstation\nPreço: 1000 SolarCoins\n\n3 - Gift Card Spotify \nPreço: 219 SolarCoins\n\n4 - Pix equivalente ao saldo\nOBS: 1 SolarCoin = R$0.10\n\nO que deseja?: "))
+            perg_compra = int(input("\nBem-vindo a nossa loja\n\n1 - 1 Mês de Alura\nPreço: 1250 SolarCoins\n\n2 - Gift Card Playstation\nPreço: 1000 SolarCoins\n\n3 - Gift Card Spotify \nPreço: 219 SolarCoins\n\n4 - Pix equivalente ao saldo\nOBS: 1 SolarCoin = R$0.10\n\nO que deseja?\nR: "))
             if perg_compra in {1, 2, 3, 4}:
                 break
             else: print("\nOpção inválida")
