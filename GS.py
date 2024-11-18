@@ -58,7 +58,7 @@ def Geracao(wt_gerados, consumo, Saldo):
 
     wt_gerados += perg_wt_gerados
 
-    print(f"\nFoi adicionado {wt_gerados}kWh em seu saldo de Geração")
+    print(f"\nFoi adicionado {wt_gerados} kWh em seu saldo de Geração")
     input("\nPressione enter para continuar")
 
     return wt_gerados, Menu_Principal(wt_gerados, consumo, Saldo)    
@@ -94,7 +94,7 @@ def Add_Consumo(wt_gerados, consumo, Saldo):
 
         while True:
             try:
-                consumo_no_periodo = int(input(f"Consumo no dia {i}: "))
+                consumo_no_periodo = float(input(f"Consumo no dia {i}: "))
                 if consumo_no_periodo > 0:
                     break
                 print("\nOpção inválida.")
