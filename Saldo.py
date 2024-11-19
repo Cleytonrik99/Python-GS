@@ -50,7 +50,7 @@ def Compra(wt_gerados, consumo, Saldo):
     # Entrada do usuário, sendo apresentado as opções de itens vendidos
     while True:
         try:
-            perg_compra = int(input("\nBem-vindo a nossa loja\n\n1 - 1 Mês de Alura\nPreço: 1250 SolarCoins\n\n2 - Gift Card Playstation\nPreço: 1000 SolarCoins\n\n3 - Gift Card Spotify \nPreço: 219 SolarCoins\n\n4 - Pix equivalente ao saldo\nOBS: 1 SolarCoin = R$0.10\n\nO que deseja?\nR: "))
+            perg_compra = int(input(f"\nBem-vindo a nossa loja\n\n1 - 1 Mês de Alura\nPreço: 1250 SolarCoins\n\n2 - Gift Card Playstation\nPreço: 1000 SolarCoins\n\n3 - Gift Card Spotify \nPreço: 219 SolarCoins\n\n4 - Pix equivalente ao saldo\nOBS: 1 SolarCoin = R$0.10\n\nAtualmente seu saldo é de {Saldo} SolarCoins\n\nO que deseja?\nR: "))
             if perg_compra in {1, 2, 3, 4}:
                 break
             else: print("\nOpção inválida")
@@ -61,27 +61,43 @@ def Compra(wt_gerados, consumo, Saldo):
     # Desconto do preço do item no saldo do cliente
     # Exibição de saldo atual
     if perg_compra == 1:
-        print("\nO código para 1 mês de Alura será enviado para o seu e-mail")
-        Saldo -= 1250
-        print(f"\nSeu saldo agora é de {Saldo} SolarCoins")
-        input("\nPressione enter para continuar")
+        if Saldo >= 1250:
+            print("\nO código para 1 mês de Alura será enviado para o seu e-mail")
+            Saldo -= 1250
+            print(f"\nSeu saldo agora é de {Saldo} SolarCoins")
+            input("\nPressione enter para continuar")
+        else:
+            print("Saldo insuficiente")
+            input("\nPressione enter para continuar")
 
     elif perg_compra == 2:
-        print("\nO código para R$100 na plataforma Playstation será enviado para o seu e-mail")
-        Saldo -= 1000
-        print(f"\nSeu saldo agora é de {Saldo} SolarCoins")
-        input("\nPressione enter para continuar")
+        if Saldo >= 1000:
+            print("\nO código para R$100 na plataforma Playstation será enviado para o seu e-mail")
+            Saldo -= 1000
+            print(f"\nSeu saldo agora é de {Saldo} SolarCoins")
+            input("\nPressione enter para continuar")
+        else:
+            print("Saldo insuficiente")
+            input("\nPressione enter para continuar") 
 
     elif perg_compra == 3:
-        print("\nO código para 1 mês de Spotify Premium será enviado para o seu e-mail")
-        Saldo -= 219
-        print(f"\nSeu saldo agora é de {Saldo} SolarCoins")
-        input("\nPressione enter para continuar")
+        if Saldo >= 219:
+            print("\nO código para 1 mês de Spotify Premium será enviado para o seu e-mail")
+            Saldo -= 219
+            print(f"\nSeu saldo agora é de {Saldo} SolarCoins")
+            input("\nPressione enter para continuar")
+        else:
+            print("Saldo insuficiente")
+            input("\nPressione enter para continuar")
 
     elif perg_compra == 4:
-        print("\nO pix equivalente ao saldo de SolarCoins da sua conta será enviado para sua conta bancária")
-        Saldo = 0
-        print(f"\nSeu saldo agora é de {Saldo} SolarCoins")
-        input("\nPressione enter para continuar")
+        if Saldo >= 1:
+            print("\nO pix equivalente ao saldo de SolarCoins da sua conta será enviado para sua conta bancária")
+            Saldo = 0
+            print(f"\nSeu saldo agora é de {Saldo} SolarCoins")
+            input("\nPressione enter para continuar")
+        else:
+            print("Saldo insuficiente")
+            input("\nPressione enter para continuar")
 
     return Saldo, Menu_Principal(wt_gerados, consumo, Saldo)

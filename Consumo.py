@@ -99,6 +99,7 @@ def Media(wt_gerados, consumo, Saldo):
     # Tratamento de erro em caso de o usuário não ter adicionado nenhum consumo
     while not consumo:
         print("\nNão é possível executar esta função pois não há nenhum dado de consumo")
+        input("\nPressione enter para continuar")
         Menu_Principal(wt_gerados, consumo, Saldo)
     
     # Criação da variável de média
