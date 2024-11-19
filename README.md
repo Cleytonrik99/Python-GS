@@ -1,9 +1,15 @@
-# Python-GS
-- Cleyton Enrike de Oliveira -- RM:560485
-- Matheus Henrique Nascimento de Freitas -- RM:560442
-- Pedro Henrique de Souza Sena -- RM:561178
+# Python | Global Solution | Prof. Arnaldo.
 
-# Sun Cash
+## Equipe Solar Coin
+
+| Nome                       | Função/Responsabilidade  | Contato (E-mail ou GitHub) |
+|----------------------------|--------------------------|--------------------------- |
+| Cleyton Enrike de Oliveira | Descrição da função      | rm560485@fiap.com.br       |
+| Matheus Henrique Nascimento| Descrição da função      | rm560442@fiap.com.br       |
+| Pedro Henrique de S. Sena  | Descrição da função      | rm561178@fiap.com.br       |
+
+
+# Solar Cash
 
 O projeto **SolarCash** tem como objetivo oferecer uma plataforma inovadora para usuários de sistemas de energia solar. A proposta é atender aqueles que, ao gerarem energia em suas residências ou empresas, frequentemente acabam produzindo mais do que consomem. Essa energia excedente, que normalmente seria desperdiçada ou limitada em sua utilização, ganha uma nova utilidade com o SolarCash.
 
