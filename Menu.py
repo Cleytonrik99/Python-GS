@@ -70,6 +70,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# Mostrar para Pedro e Matheus
-# Fazer o vídeo
